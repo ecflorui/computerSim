@@ -11,9 +11,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="facing" val="west"/>
     </tool>
     <tool name="Tunnel">
-      <a name="facing" val="east"/>
+      <a name="facing" val="south"/>
       <a name="width" val="8"/>
-      <a name="label" val="o"/>
+      <a name="label" val="sum 1"/>
     </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
@@ -45,6 +45,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </tool>
     <tool name="NAND Gate">
       <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </tool>
+    <tool name="XOR Gate">
       <a name="inputs" val="2"/>
     </tool>
     <tool name="Controlled Buffer">
@@ -134,16 +137,16 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <sep/>
     <tool lib="0" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="enable"/>
+      <a name="label" val="carry in"/>
     </tool>
     <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="width" val="8"/>
       <a name="labelloc" val="east"/>
     </tool>
     <tool lib="1" name="NOT Gate"/>
     <tool lib="1" name="AND Gate">
-      <a name="inputs" val="4"/>
+      <a name="inputs" val="2"/>
     </tool>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
@@ -152,6 +155,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <comp loc="(1410,920)" name="RANDOM_ACCESS_MEMORY">
+      <a name="labelloc" val="south"/>
+    </comp>
   </circuit>
   <circuit name="MEM_1">
     <a name="circuit" val="MEM_1"/>
@@ -9816,6 +9822,100 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp loc="(2960,420)" name="BYTE-REGISTER"/>
   </circuit>
+  <circuit name="FULL_ADDER_1">
+    <a name="circuit" val="FULL_ADDER_1"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="none" height="102" stroke="#000000" width="70" x="321" y="89"/>
+      <text font-family="Lucida Sans Typewriter" font-size="10" font-weight="bold" text-anchor="middle" x="356" y="185">full adder</text>
+      <text font-family="Lucida Sans Typewriter" font-size="7" text-anchor="middle" x="331" y="112">a</text>
+      <text font-family="Lucida Sans Typewriter" font-size="7" text-anchor="middle" x="331" y="123">b</text>
+      <text font-family="Lucida Sans Typewriter" font-size="7" text-anchor="middle" x="335" y="142">cin</text>
+      <text font-family="Lucida Sans Typewriter" font-size="7" text-anchor="middle" x="373" y="132">cout</text>
+      <text font-family="Lucida Sans Typewriter" font-size="7" text-anchor="middle" x="373" y="123">sum</text>
+      <path d="M348,90 Q355,97 362,90" fill="none" stroke="#000000"/>
+      <circ-port height="8" pin="300,240" width="8" x="316" y="106"/>
+      <circ-port height="8" pin="300,280" width="8" x="316" y="116"/>
+      <circ-port height="8" pin="300,340" width="8" x="316" y="136"/>
+      <circ-port height="10" pin="660,320" width="10" x="385" y="115"/>
+      <circ-port height="10" pin="660,450" width="10" x="385" y="125"/>
+      <circ-anchor facing="east" height="6" width="6" x="387" y="117"/>
+    </appear>
+    <wire from="(300,280)" to="(360,280)"/>
+    <wire from="(520,300)" to="(580,300)"/>
+    <wire from="(550,430)" to="(590,430)"/>
+    <wire from="(550,470)" to="(590,470)"/>
+    <wire from="(550,400)" to="(550,430)"/>
+    <wire from="(360,510)" to="(460,510)"/>
+    <wire from="(550,470)" to="(550,490)"/>
+    <wire from="(360,280)" to="(400,280)"/>
+    <wire from="(460,260)" to="(500,260)"/>
+    <wire from="(510,400)" to="(550,400)"/>
+    <wire from="(510,490)" to="(550,490)"/>
+    <wire from="(320,240)" to="(320,470)"/>
+    <wire from="(360,280)" to="(360,510)"/>
+    <wire from="(640,320)" to="(660,320)"/>
+    <wire from="(640,450)" to="(660,450)"/>
+    <wire from="(300,240)" to="(320,240)"/>
+    <wire from="(440,420)" to="(460,420)"/>
+    <wire from="(440,380)" to="(460,380)"/>
+    <wire from="(500,260)" to="(520,260)"/>
+    <wire from="(440,340)" to="(440,380)"/>
+    <wire from="(520,260)" to="(520,300)"/>
+    <wire from="(300,340)" to="(440,340)"/>
+    <wire from="(320,470)" to="(460,470)"/>
+    <wire from="(440,340)" to="(580,340)"/>
+    <wire from="(320,240)" to="(400,240)"/>
+    <comp lib="1" loc="(460,260)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(300,340)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="carry in"/>
+    </comp>
+    <comp lib="1" loc="(510,400)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(510,490)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="1" loc="(640,320)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(660,320)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="sum"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(440,420)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="sum 1"/>
+    </comp>
+    <comp lib="0" loc="(300,240)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="a"/>
+    </comp>
+    <comp lib="0" loc="(300,280)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="b"/>
+    </comp>
+    <comp lib="0" loc="(660,450)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="carry out"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(500,260)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="sum 1"/>
+    </comp>
+    <comp lib="1" loc="(640,450)" name="OR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+  </circuit>
   <circuit name="Active Low SR Latch">
     <a name="circuit" val="Active Low SR Latch"/>
     <a name="clabel" val=""/>
@@ -10069,6 +10169,48 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="6" loc="(243,100)" name="Text">
       <a name="text" val="simple version w/ no buffer or control"/>
+    </comp>
+  </circuit>
+  <circuit name="half adder">
+    <a name="circuit" val="half adder"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(540,470)" to="(660,470)"/>
+    <wire from="(540,310)" to="(660,310)"/>
+    <wire from="(430,450)" to="(490,450)"/>
+    <wire from="(370,330)" to="(370,490)"/>
+    <wire from="(430,290)" to="(430,450)"/>
+    <wire from="(370,330)" to="(480,330)"/>
+    <wire from="(430,290)" to="(480,290)"/>
+    <wire from="(300,290)" to="(430,290)"/>
+    <wire from="(370,490)" to="(490,490)"/>
+    <wire from="(300,330)" to="(370,330)"/>
+    <comp lib="1" loc="(540,310)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(300,290)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="a"/>
+    </comp>
+    <comp lib="0" loc="(660,470)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="carry"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(300,330)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="b"/>
+    </comp>
+    <comp lib="1" loc="(540,470)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(660,310)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="sum"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>
