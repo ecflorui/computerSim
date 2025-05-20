@@ -9,7 +9,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="appear" val="right"/>
     </tool>
     <tool name="Pin">
-      <a name="facing" val="west"/>
+      <a name="facing" val="north"/>
     </tool>
     <tool name="Tunnel">
       <a name="facing" val="south"/>
@@ -137,15 +137,17 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </tool>
     <sep/>
     <tool lib="0" name="Pin">
-      <a name="width" val="8"/>
+      <a name="facing" val="south"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="carry in"/>
+      <a name="label" val="shift in"/>
+      <a name="labelloc" val="north"/>
     </tool>
     <tool lib="0" name="Pin">
-      <a name="facing" val="west"/>
+      <a name="facing" val="north"/>
       <a name="output" val="true"/>
-      <a name="label" val="carry out"/>
-      <a name="labelloc" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="shift out"/>
+      <a name="labelloc" val="east"/>
     </tool>
     <tool lib="1" name="NOT Gate"/>
     <tool lib="1" name="AND Gate">
@@ -10110,6 +10112,159 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
+  </circuit>
+  <circuit name="SHIFT_RIGHT">
+    <a name="circuit" val="SHIFT_RIGHT"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(340,360)" to="(390,360)"/>
+    <wire from="(500,370)" to="(680,370)"/>
+    <wire from="(680,300)" to="(680,370)"/>
+    <wire from="(700,360)" to="(700,460)"/>
+    <wire from="(500,380)" to="(670,380)"/>
+    <wire from="(500,390)" to="(670,390)"/>
+    <wire from="(500,400)" to="(670,400)"/>
+    <wire from="(500,410)" to="(670,410)"/>
+    <wire from="(500,420)" to="(670,420)"/>
+    <wire from="(500,430)" to="(670,430)"/>
+    <wire from="(500,440)" to="(670,440)"/>
+    <wire from="(740,420)" to="(740,480)"/>
+    <wire from="(770,420)" to="(770,480)"/>
+    <wire from="(660,450)" to="(660,500)"/>
+    <wire from="(420,420)" to="(420,480)"/>
+    <wire from="(450,420)" to="(450,480)"/>
+    <wire from="(700,360)" to="(710,360)"/>
+    <wire from="(660,450)" to="(670,450)"/>
+    <wire from="(800,360)" to="(880,360)"/>
+    <wire from="(690,460)" to="(700,460)"/>
+    <comp loc="(800,360)" name="REGISTER"/>
+    <comp lib="0" loc="(480,360)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(770,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(340,360)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="input"/>
+    </comp>
+    <comp lib="0" loc="(690,460)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp loc="(480,360)" name="REGISTER"/>
+    <comp lib="0" loc="(420,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(450,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(680,300)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="shift out"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(880,360)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="output"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(660,500)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="shift in"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(740,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+  </circuit>
+  <circuit name="SHIFT_LEFT">
+    <a name="circuit" val="SHIFT_LEFT"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(340,360)" to="(390,360)"/>
+    <wire from="(500,440)" to="(680,440)"/>
+    <wire from="(670,290)" to="(670,360)"/>
+    <wire from="(500,430)" to="(670,430)"/>
+    <wire from="(500,420)" to="(670,420)"/>
+    <wire from="(500,410)" to="(670,410)"/>
+    <wire from="(500,400)" to="(670,400)"/>
+    <wire from="(500,390)" to="(670,390)"/>
+    <wire from="(500,380)" to="(670,380)"/>
+    <wire from="(500,370)" to="(670,370)"/>
+    <wire from="(740,420)" to="(740,480)"/>
+    <wire from="(770,420)" to="(770,480)"/>
+    <wire from="(680,440)" to="(680,490)"/>
+    <wire from="(420,420)" to="(420,480)"/>
+    <wire from="(700,360)" to="(700,440)"/>
+    <wire from="(450,420)" to="(450,480)"/>
+    <wire from="(800,360)" to="(880,360)"/>
+    <wire from="(700,360)" to="(710,360)"/>
+    <wire from="(690,440)" to="(700,440)"/>
+    <comp lib="0" loc="(770,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(740,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(340,360)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="input"/>
+    </comp>
+    <comp lib="0" loc="(450,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp loc="(800,360)" name="REGISTER"/>
+    <comp lib="0" loc="(690,440)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(670,290)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="shift in"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(420,480)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(880,360)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="output"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(680,490)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="shift out"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(480,360)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp loc="(480,360)" name="REGISTER"/>
   </circuit>
   <circuit name="Active Low SR Latch">
     <a name="circuit" val="Active Low SR Latch"/>
