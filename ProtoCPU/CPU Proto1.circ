@@ -10854,6 +10854,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="8"/>
+      <a name="label" val="output"/>
       <a name="labelloc" val="east"/>
     </comp>
     <comp loc="(590,390)" name="XOR_1"/>
@@ -10882,6 +10883,51 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit5" val="2"/>
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
+    </comp>
+  </circuit>
+  <circuit name="ZERO">
+    <a name="circuit" val="ZERO"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(140,180)" to="(170,180)"/>
+    <wire from="(380,190)" to="(440,190)"/>
+    <wire from="(150,150)" to="(310,150)"/>
+    <wire from="(470,190)" to="(530,190)"/>
+    <wire from="(150,150)" to="(150,160)"/>
+    <wire from="(160,160)" to="(160,170)"/>
+    <wire from="(160,160)" to="(310,160)"/>
+    <wire from="(170,170)" to="(170,180)"/>
+    <wire from="(180,180)" to="(180,190)"/>
+    <wire from="(140,170)" to="(160,170)"/>
+    <wire from="(140,160)" to="(150,160)"/>
+    <wire from="(140,200)" to="(310,200)"/>
+    <wire from="(140,210)" to="(310,210)"/>
+    <wire from="(140,220)" to="(310,220)"/>
+    <wire from="(140,230)" to="(310,230)"/>
+    <wire from="(170,170)" to="(310,170)"/>
+    <wire from="(140,190)" to="(180,190)"/>
+    <wire from="(180,180)" to="(310,180)"/>
+    <comp lib="1" loc="(470,190)" name="NOT Gate"/>
+    <comp lib="0" loc="(120,150)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(120,150)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="input"/>
+    </comp>
+    <comp lib="1" loc="(380,190)" name="OR Gate">
+      <a name="size" val="70"/>
+      <a name="inputs" val="8"/>
+    </comp>
+    <comp lib="0" loc="(530,190)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="output"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
   <circuit name="Active Low SR Latch">
